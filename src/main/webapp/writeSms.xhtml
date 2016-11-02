@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <link href="resources/css/writeSms.css" rel="stylesheet" type="text/css"/>
+    <body>
+        <style>
+            option{
+                padding: 5px
+            }
+            .form-control:hover{
+                border: 2px solid #f5330e;
+                color: #2a7bb6
+            }
+            .checkbox{
+                height: 20px;
+                width: 20px;
+                background-color: #fff;
+                border: 2px solid #237fc2;
+                border-radius: 3px;
+                padding-bottom: 5px;
+            }
+            .checkbox:hover{
+                border: 2px solid #f5330e;
+                cursor: pointer;
+            }
+            .fa-checkbox{
+                position: relative;
+                top: -3px;
+                color: #f5330e;
+            }
+            .list-group-item{
+                border: none;
+                border-color: #fff;
+            }
+
+            .checkbox-input{
+                height: 20px;
+                width: 20px;
+                opacity: 0.3;
+            }
+            .checkbox-label{
+                margin-top: 3px;
+                position: absolute;
+                margin-left: 10px
+            }
+            .div-input-checkbox{
+                margin-top: -33px;
+                z-index: 2;
+                position: relative
+            }
+            .checkbox-on{
+                position: relative; z-index: 3
+            }
+
+        </style>
+
+        <ui:composition template="./templateGeneral.xhtml">
+
+            <ui:define name="content">
+                <div class="templateContent container-fluid" style="padding: 0px">
+                    <div class="col-lg-3 col-md-3 hidden-xs hidden-sm" style="padding: 5px">
+                        <div class="panel panel-default">
+                            <div class="div-tete panel-heading media" style="padding: 0px">
+                                <div class="pull-left text-center" style="width: 50px; background-color: #036fab; padding: 4px">
+                                    <i class="fa fa-spinner fa-2x blanc"></i>
+                                </div>
+                                <div class="media-object vert" style="width: 80%; padding: 4px; padding-top: 10px; font-weight: bold">
+                                    <span class="taille-14" style="margin-left: 5px; color: #036fab">Accès Rapide</span>
+                                </div>
+                            </div>
+                            <div class="panel-body" style="padding: 0px">
+                                <ul class="list-group" id="div-app-menu">
+                                    <a href="#"><li class="list-group-item menu-item-droite">Accueil </li></a>
+                                    <a href="#"><li class="list-group-item menu-item-droite">Ecrire message </li></a>
+                                    <a href="#"><li class="list-group-item menu-item-droite">Boite d'envoie</li></a>
+                                    <li role="separator" class="divider list-group-item"></li>
+                                </ul>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12" style="padding: 5px">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <p class="orange"><i class="fa fa-edit fa-2x"></i><label class="taille-20"> Composez le message à envoyer à vos Contacts</label></p>
+                                <div class="col-lg-6 col-md-6 col-md-12 col-xs-12">
+                                    <h:form>
+                                        <div class="form-group-lg form-horizontal" style="width: 100%; padding-top: 20px">
+                                            <label>Envoyez Entant que:</label>
+                                            <select class="form-control" style="margin-bottom: 20px">
+                                                <option class="hidden">Choisir le nom d'envoi</option>
+                                                <option>Nom1</option>
+                                                <option>Nom2</option>
+                                                <option>Nom3</option>
+                                                <option>Nom3</option>
+                                            </select>
+                                            <h:inputTextarea id="telephone" class='form-control' rows="12" required="requireds" a:placeholder="Ecrire le message"/>    
+                                        </div>
+                                    </h:form>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-md-12 col-xs-12" style="padding-top: 20px">
+                                    <label>Choisir les destinateurs ici</label>
+                                    <div class="panel panel-default hidden-xs">
+                                        <div class="panel-heading blanc text-center taille-16" style="padding: 0px">
+                                            <ul class="nav nav-tabs">
+                                                <li class="active">
+                                                    <a href="#ajouter" data-toggle="tab" style="padding: 10px">
+                                                        <strong><i class="fa fa-book"></i> Repertoire</strong>
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="#gerer" data-toggle="tab" style="padding: 10px">
+                                                        <strong><i class="fa fa-users"></i> Groupes</strong>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="panel-body text-bold taille-16 tab-content" style="padding: 5px">
+                                            <div class="tab-pane active">
+                                                <ul class="list-group" id="list-repertoire">
+                                                    <li class="list-group-item" style="padding: 5px 0px 0px 0px; border: none">
+                                                        <span data-id-on='1' class="checkbox checkbox-on hidden"><i class="fa fa-check fa-checkbox"></i></span>
+                                                        <span data-id-off='1' class="checkbox checkbox-off"></span>
+                                                        <div class="div-input-checkbox">
+                                                            <input id='1' type="checkbox" class="checkbox-input not-checked"/> <label for="1" class="taille-14 checkbox-label">Nom Contact</label>
+                                                        </div>
+                                                    </li>
+                                                    
+                                                    
+                                                    
+                                                    
+                                                </ul>
+                                            </div>
+                                            <div class="tab-pane deux" id="gerer">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+
+        <script>
+            
+            $(".not-checked").click(function (){
+                var id = $(this).attr("id");
+                $(".checkbox-off[data-id-off='"+id+"']").addClass("hidden");
+                $(".checkbox-on[data-id-on='"+id+"']").removeClass("hidden");
+                $(this).removeClass("not-checked").addClass("checked")
+            });
+            $(".checkbox-on").click(function (){
+                var id = $(this).attr("data-id-on");
+                $(".checkbox-on[data-id-on='"+id+"']").addClass("hidden");
+                $(".checkbox-off[data-id-off='"+id+"']").removeClass("hidden");
+                $(".checkbox-input[id='"+id+"']").addClass("not-checked").removeClass("checked");
+            });
+            
+            /**$(".fa-checkbox").hide();
+             $(".checkbox[data-statut='not-checked']").click(function (){
+             $(".fa-checkbox").css("opacity", 1).show();
+             $(this).attr("data-statut", "checked").addClass("checked");
+             });
+             
+             $(".fa-checkbox").click(function (){
+             $(this).css("opacity", 0).hide();
+             });
+             $(".checked").click(function (){
+             $(".fa-checkbox").css("opacity", 0).hide();
+             $(this).attr("data-statut", "not-checked").remove("checked");
+             });**/
+        </script>
+
+    </body>
+</html>
