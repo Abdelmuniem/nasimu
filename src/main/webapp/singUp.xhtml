@@ -174,7 +174,7 @@
                         </div>
                     </h:form>
                 </div>
-                
+
                 <div id="form-inscription3">
                     <h:form>
                         <div class="form-group-lg col-lg-8 col-md-8 col-sm-12 col-xs-12 col-lg-push-2 col-md-push-2" style="padding-top: 20px; z-index: 4; position: relative; padding-left: 0px; padding-right: 0px">
@@ -219,7 +219,7 @@
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-bottom: 20px">
                                 <h:inputText a:type="email" id="ville" class='form-control' required="requireds" a:placeholder="Votre ville"/>
                             </div>
-                            
+
 
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-lg-offset-6 col-md-offset-6" style="padding-bottom: 10px">
                                 <button class="btn btn-lg btn-primary btn-block " value="Terminez" id="btn-register" style="margin-bottom: 5px; color: #fff">Créez votre compte</button>
@@ -241,28 +241,30 @@
         </div>
 
         <script type="text/javascript">
+
             $("#label-creer-compte").hide();
             $(".block-login").hide();
-            $("#form-inscription2").hide();
-            $(".show-block-login").click(function() {
+            //$("#form-inscription2").hide();
+            $(".show-block-login").click(function () {
                 $(".block-login").fadeIn(400);
                 $("#head").css("border", "none");
                 $("#text-descr1").css("top", 220);
             });
 
-            $(".btn-close-form").click(function() {
+            $(".btn-close-form").click(function () {
                 $(".block-menu-right").removeClass("hidden").fadeIn();
                 $(".block-login").hide();
                 $("#text-descr1").css("top", 100);
             });
-
-            $("#btn-register").click(function(e) {
-                e.preventDefault();
-                $(this).hide();
-                $("#label-creer-compte").fadeIn().removeClass("hidden");
-                $("#form-inscription1").fadeOut(100);
-                $("#form-inscription2").fadeIn(100).removeClass("hidden");
-            });
+            /**  
+             $("#btn-register").click(function(e) {
+             e.preventDefault();
+             $(this).hide();
+             $("#label-creer-compte").fadeIn().removeClass("hidden");
+             $("#form-inscription1").fadeOut(100);
+             $("#form-inscription2").fadeIn(100).removeClass("hidden");
+             });
+             **/
         </script>
 
     </h:body>

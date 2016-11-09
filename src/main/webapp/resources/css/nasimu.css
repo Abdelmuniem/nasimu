@@ -16,8 +16,6 @@ body{
     padding: 0px
 }
 
-// LES CLASSE DE COULEUR ET COULEUR DE FONT//
-//*****************************************//
 
 .rouge{color: #c90303;}
 .rouge{
@@ -43,6 +41,9 @@ body{
 }
 .blanc{
     color: #fff
+}
+.noir{
+    color: #000;
 }
 
 .bc-rouge{
@@ -79,7 +80,6 @@ body{
     margin-left: auto;
     margin-right: auto;
 }
-// LES TAILLES DE POLICE
 
 .media > #prop_super_correspondance{
     padding: 3px;
@@ -105,7 +105,8 @@ body{
 .taille-45{font-size: 45px}
 .taille-50{font-size: 50px}
 .font-bold{font-weight: bold}
-//MES BOUTON....
+
+
 .btn-orange {
     color: #fff;
     background-color: #f86018;
@@ -152,7 +153,8 @@ body{
     border-color: #e7e5e7;
 }
 bc-noir{background-color: #272727}
-//STYLE BORDURE.....
+
+
 .bordure-3{
     border-radius: 3px;
 }
@@ -171,7 +173,37 @@ bc-noir{background-color: #272727}
     font-weight: bold;
 }
 
-//STYLE DE FONT
+
 .font-vrinda{font-family: Vrinda;}
 
+/*Classe de marge et padding*/
+.padding-2{
+    padding: 2px
+}
+.padding-3{
+    padding: 3px
+}
+.padding-5{
+    padding: 5px
+}
+.padding-10{
+    padding: 10px
+}
 
+
+/*Classe de border-raduis*/
+.border-raduis-3{border-radius: 3px;}
+.border-raduis-5{border-radius: 5px}
+.border-raduis-10{border-radius: 10px}
+.border-raduis-15{border-radius: 15px}
+
+/** Style acces rapide.. ***/
+#div-app-menu a{text-decoration: none}
+#div-app-menu a:hover{color: #ffffff}
+#div-app-menu li:hover {background-color: #1c1c1c}
+#div-app-menu .list-group-item{border: none; padding: 7px; border-radius: 0px}
+#div-app-menu .list-group-item a:hover{cursor: pointer; background-color: #f94815}
+#div-app-menu .list-group{margin-top: -20px}
+#div-app-menu tr{border-bottom: 1px solid #747474; width: 100%}
+
+.divider:hover{background-color: #ffffff}
