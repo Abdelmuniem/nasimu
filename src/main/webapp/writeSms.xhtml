@@ -6,77 +6,40 @@
       xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
     <link href="resources/css/writeSms.css" rel="stylesheet" type="text/css"/>
     <body>
-        <style>
-            option{
-                padding: 5px
-            }
-            .form-control:hover{
-                border: 2px solid #f5330e;
-                color: #2a7bb6
-            }
-            .checkbox{
-                height: 20px;
-                width: 20px;
-                background-color: #fff;
-                border: 2px solid #237fc2;
-                border-radius: 3px;
-                padding-bottom: 5px;
-            }
-            .checkbox:hover{
-                border: 2px solid #f5330e;
-                cursor: pointer;
-            }
-            .fa-checkbox{
-                position: relative;
-                top: -3px;
-                color: #f5330e;
-            }
-            .list-group-item{
-                border: none;
-                border-color: #fff;
-            }
-
-            .checkbox-input{
-                height: 20px;
-                width: 20px;
-                opacity: 0.3;
-            }
-            .checkbox-label{
-                margin-top: 3px;
-                position: absolute;
-                margin-left: 10px
-            }
-            .div-input-checkbox{
-                margin-top: -33px;
-                z-index: 2;
-                position: relative
-            }
-            .checkbox-on{
-                position: relative; z-index: 3
-            }
-
-        </style>
-
         <ui:composition template="./templateGeneral.xhtml">
-
             <ui:define name="content">
-                <div class="templateContent container-fluid" style="padding: 0px">
+                <div class="templateContent container-fluid" style="padding: 0px; padding-bottom: 50px">
                     <div class="col-lg-3 col-md-3 hidden-xs hidden-sm" style="padding: 5px">
+                        <style>
+                            /** Style acces rapide.. ***/
+                            #div-app-menu a{text-decoration: none}
+                            #div-app-menu a:hover{color: #ffffff}
+                            #div-app-menu li:hover {background-color: #1c1c1c}
+                            #div-app-menu .list-group-item{border: none; padding: 7px; border-radius: 0px}
+                            #div-app-menu .list-group-item a:hover{cursor: pointer; background-color: #f94815}
+                            #div-app-menu .list-group{margin-top: -20px}
+                            #div-app-menu tr{border-bottom: 1px solid #747474; width: 100%}
+                        </style>
                         <div class="panel panel-default">
                             <div class="div-tete panel-heading media" style="padding: 0px">
-                                <div class="pull-left text-center" style="width: 50px; background-color: #036fab; padding: 4px">
-                                    <i class="fa fa-spinner fa-2x blanc"></i>
+                                <div class="pull-left text-center" style="width: 50px; background-color: #ff0000; padding: 4px">
+                                    <i class="fa fa-bars fa-2x blanc"></i>
                                 </div>
                                 <div class="media-object vert" style="width: 80%; padding: 4px; padding-top: 10px; font-weight: bold">
-                                    <span class="taille-14" style="margin-left: 5px; color: #036fab">Accès Rapide</span>
+                                    <span class="taille-14" style="margin-left: 5px; color: #ff0000">Accès Rapide</span>
                                 </div>
                             </div>
                             <div class="panel-body" style="padding: 0px">
                                 <ul class="list-group" id="div-app-menu">
-                                    <a href="#"><li class="list-group-item menu-item-droite">Accueil </li></a>
-                                    <a href="#"><li class="list-group-item menu-item-droite">Ecrire message </li></a>
-                                    <a href="#"><li class="list-group-item menu-item-droite">Boite d'envoie</li></a>
-                                    <li role="separator" class="divider list-group-item"></li>
+                                    <a class="gris" href="home.xhtml"><li class="list-group-item menu-item-droite"><i class="fa fa-home"></i> Accueil </li></a>
+                                    <a class="vert" href="writeSms.xhtml"><li class="list-group-item menu-item-droite"><i class=" fa fa-pencil"></i> Ecrire message </li></a>
+                                    <a href="sentSms.xhtml"><li class="list-group-item menu-item-droite"><i class="fa fa-envelope"></i> Boite d'envoie</li></a>
+                                    <br/>
+                                    <a class="rouge" href="profil.xhtml"><li class="list-group-item menu-item-droite"><i class="fa fa-user"></i> Mon Profil </li></a>
+                                    <a class="rouge" href="profil.xhtml"><li class="list-group-item menu-item-droite"><i class=" fa fa-adjust"></i> Mon abonnement </li></a>
+                                    <a class="rouge" href="repertoire.xhtml"><li class="list-group-item menu-item-droite"><i class="fa fa-book"></i> Mon repertoire</li></a>
+                                    <br/>
+                                    <a href="#"><li class="list-group-item menu-item-droite taille-12"><strong><i class="fa fa-power-off"></i> DECONNECTION</strong></li></a>
                                 </ul>
 
 
@@ -86,10 +49,13 @@
 
                     <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12" style="padding: 5px">
                         <div class="panel panel-default">
-                            <div class="panel-body">
-                                <p class="orange"><i class="fa fa-edit fa-2x"></i><label class="taille-20"> Composez le message à envoyer à vos Contacts</label></p>
-                                <div class="col-lg-6 col-md-6 col-md-12 col-xs-12">
-                                    <h:form>
+                            <div class="panel-body"  style="padding: 0px">
+                                <div class="padding-10">
+                                    <p class="orange"><i class="fa fa-edit fa-2x"></i><label class="taille-20"> Composez le message à envoyer à vos Contacts</label></p>
+                                </div>
+                                <h:form>
+                                    <div class="col-lg-6 col-md-6 col-md-12 col-xs-12">
+
                                         <div class="form-group-lg form-horizontal" style="width: 100%; padding-top: 20px">
                                             <label>Envoyez Entant que:</label>
                                             <select class="form-control" style="margin-bottom: 20px">
@@ -101,48 +67,82 @@
                                             </select>
                                             <h:inputTextarea id="telephone" class='form-control' rows="12" required="requireds" a:placeholder="Ecrire le message"/>    
                                         </div>
-                                    </h:form>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-md-12 col-xs-12" style="padding-top: 20px">
-                                    <label>Choisir les destinateurs ici</label>
-                                    <div class="panel panel-default hidden-xs">
-                                        <div class="panel-heading blanc text-center taille-16" style="padding: 0px">
-                                            <ul class="nav nav-tabs">
-                                                <li class="active">
-                                                    <a href="#ajouter" data-toggle="tab" style="padding: 10px">
-                                                        <strong><i class="fa fa-book"></i> Repertoire</strong>
-                                                    </a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="#gerer" data-toggle="tab" style="padding: 10px">
-                                                        <strong><i class="fa fa-users"></i> Groupes</strong>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="panel-body text-bold taille-16 tab-content" style="padding: 5px">
-                                            <div class="tab-pane active">
-                                                <ul class="list-group" id="list-repertoire">
-                                                    <li class="list-group-item" style="padding: 5px 0px 0px 0px; border: none">
-                                                        <span data-id-on='1' class="checkbox checkbox-on hidden"><i class="fa fa-check fa-checkbox"></i></span>
-                                                        <span data-id-off='1' class="checkbox checkbox-off"></span>
-                                                        <div class="div-input-checkbox">
-                                                            <input id='1' type="checkbox" class="checkbox-input not-checked"/> <label for="1" class="taille-14 checkbox-label">Nom Contact</label>
-                                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-md-12 col-xs-12" style="padding-top: 20px">
+                                        <label>Choisir les destinateurs ici</label>
+                                        <div class="panel panel-default ">
+                                            <div class="panel-heading blanc text-center taille-16" style="padding: 0px">
+                                                <ul class="nav nav-tabs">
+                                                    <li class="active">
+                                                        <a href="#repertoire" data-toggle="tab" style="padding: 10px">
+                                                            <strong><i class="fa fa-book"></i> Repertoire</strong>
+                                                        </a>
                                                     </li>
-                                                    
-                                                    
-                                                    
-                                                    
+
+                                                    <li>
+                                                        <a href="#groupe" data-toggle="tab" style="padding: 10px">
+                                                            <strong><i class="fa fa-users"></i> Groupes</strong>
+                                                        </a>
+                                                    </li>
                                                 </ul>
                                             </div>
-                                            <div class="tab-pane deux" id="gerer">
-
+                                            <div class="panel-body text-bold taille-16 tab-content" style="padding: 5px">
+                                                <div class="tab-pane active"  id="repertoire">
+                                                    <ul class="list-group">
+                                                        <li class="list-group-item" style="padding: 5px 0px 0px 0px; border: none">
+                                                            <input id='1' class="checkbox-input" type="checkbox"/> <label for="1" class="taille-12 checkbox-label">Nom Contact1</label>
+                                                        </li>
+                                                        <li class="list-group-item" style="padding: 5px 0px 0px 0px; border: none">
+                                                            <input id='2' class="checkbox-input" type="checkbox"/> <label for="2" class="taille-12 checkbox-label">Nom Contact2</label>
+                                                        </li>
+                                                        <li class="list-group-item" style="padding: 5px 0px 0px 0px; border: none">
+                                                            <input id='1' class="checkbox-input" type="checkbox"/> <label for="1" class="taille-12 checkbox-label">Nom Contact1</label>
+                                                        </li>
+                                                        <li class="list-group-item" style="padding: 5px 0px 0px 0px; border: none">
+                                                            <input id='2' class="checkbox-input" type="checkbox"/> <label for="2" class="taille-12 checkbox-label">Nom Contact2</label>
+                                                        </li>
+                                                        <li class="list-group-item" style="padding: 5px 0px 0px 0px; border: none">
+                                                            <input id='1' class="checkbox-input" type="checkbox"/> <label for="1" class="taille-12 checkbox-label">Nom Contact1</label>
+                                                        </li>
+                                                        <li class="list-group-item" style="padding: 5px 0px 0px 0px; border: none">
+                                                            <input id='2' class="checkbox-input" type="checkbox"/> <label for="2" class="taille-12 checkbox-label">Nom Contact2</label>
+                                                        </li>
+                                                        <li class="list-group-item" style="padding: 5px 0px 0px 0px; border: none">
+                                                            <input id='1' class="checkbox-input" type="checkbox"/> <label for="1" class="taille-12 checkbox-label">Nom Contact1</label>
+                                                        </li>
+                                                        <li class="list-group-item" style="padding: 5px 0px 0px 0px; border: none">
+                                                            <input id='2' class="checkbox-input" type="checkbox"/> <label for="2" class="taille-12 checkbox-label">Nom Contact2</label>
+                                                        </li>
+                                                        <li class="list-group-item" style="padding: 5px 0px 0px 0px; border: none">
+                                                            <input id='1' class="checkbox-input" type="checkbox"/> <label for="1" class="taille-12 checkbox-label">Nom Contact1</label>
+                                                        </li>
+                                                        <li class="list-group-item" style="padding: 5px 0px 0px 0px; border: none">
+                                                            <input id='2' class="checkbox-input" type="checkbox"/> <label for="2" class="taille-12 checkbox-label">Nom Contact2</label>
+                                                        </li>
+                                                        <li class="list-group-item" style="padding: 5px 0px 0px 0px; border: none">
+                                                            <input id='1' class="checkbox-input" type="checkbox"/> <label for="1" class="taille-12 checkbox-label">Nom Contact1</label>
+                                                        </li>
+                                                        <li class="list-group-item" style="padding: 5px 0px 0px 0px; border: none">
+                                                            <input id='2' class="checkbox-input" type="checkbox"/> <label for="2" class="taille-12 checkbox-label">Nom Contact2</label>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="tab-pane" id="groupe">
+                                                    <ul class="list-group" id="list-repertoire">
+                                                        <li class="list-group-item" style="padding: 5px 0px 0px 0px; border: none">
+                                                            <input id='g1' class="checkbox-input" type="checkbox"/> <label for="g1" class="taille-12 checkbox-label">Groupe1</label>
+                                                            <span class="pull-right taille-11 label-success blanc padding-5 border-raduis-3">23 membres</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+
+                                    <div class="col-lg-12 col-md-12 col-md-12 col-xs-12 padding-10">
+                                        <h:commandButton class="pull-right btn btn-primary" value="Envoyez le message" />
+                                    </div>
+                                </h:form>
                             </div>
                         </div>
                     </div>
@@ -153,33 +153,8 @@
 
 
         <script>
-            
-            $(".not-checked").click(function (){
-                var id = $(this).attr("id");
-                $(".checkbox-off[data-id-off='"+id+"']").addClass("hidden");
-                $(".checkbox-on[data-id-on='"+id+"']").removeClass("hidden");
-                $(this).removeClass("not-checked").addClass("checked")
-            });
-            $(".checkbox-on").click(function (){
-                var id = $(this).attr("data-id-on");
-                $(".checkbox-on[data-id-on='"+id+"']").addClass("hidden");
-                $(".checkbox-off[data-id-off='"+id+"']").removeClass("hidden");
-                $(".checkbox-input[id='"+id+"']").addClass("not-checked").removeClass("checked");
-            });
-            
-            /**$(".fa-checkbox").hide();
-             $(".checkbox[data-statut='not-checked']").click(function (){
-             $(".fa-checkbox").css("opacity", 1).show();
-             $(this).attr("data-statut", "checked").addClass("checked");
-             });
-             
-             $(".fa-checkbox").click(function (){
-             $(this).css("opacity", 0).hide();
-             });
-             $(".checked").click(function (){
-             $(".fa-checkbox").css("opacity", 0).hide();
-             $(this).attr("data-statut", "not-checked").remove("checked");
-             });**/
+
+
         </script>
 
     </body>
